@@ -1,13 +1,22 @@
 export default async function handler(req, res) {
-  // Only allow POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { messages, lang } = req.body;
+  let { messages, lang } = req.body;
 
   if (!messages || !Array.isArray(messages)) {
     return res.status(400).json({ error: 'Invalid request' });
+  }
+
+  // If no messages yet — add starter so API doesn't fail
+  if (messages.length === 0) {
+    const starters = {
+      ru: 'Начни разговор',
+      kz: 'Әңгімені бастай бер',
+      en: 'Start the conversation'
+    };
+    messages = [{ role: 'user', content: starters[lang] || starters.ru }];
   }
 
   const SYSTEM_PROMPTS = {
@@ -21,7 +30,6 @@ export default async function handler(req, res) {
 - Никогда не давай советов про бюджет или инвестиции
 - Используй слова пользователя — правильно склоняй имена и фразы
 - Говори "ты", не "вы"
-- Если пользователь назвал свою часть "Малышка" — используй "Малышку", "Малышке" и т.д. правильно
 - Будь живым, не шаблонным
 
 СТРУКТУРА РАЗГОВОРА (9 шагов, веди строго по ним):
@@ -35,7 +43,7 @@ export default async function handler(req, res) {
 8. Скажи что той версии было столько-то лет (используй названный возраст), а сейчас она взрослая. Добавь: "Я вижу тебя. У тебя достаточно сил." Спроси какое решение она принимает сегодня
 9. Попроси назвать одно действие в ближайшие 24 часа которое подтвердит новое решение
 
-После шага 9 — напиши финальное сообщение в формате JSON:
+После шага 9 — напиши финальное сообщение ТОЛЬКО в формате JSON без лишнего текста:
 {"type":"final","text":"[тёплое завершающее слово от Папы]","contract":{"age":"[возраст]","decision":"[старое решение]","name":"[имя части]","newDecision":"[новое решение]","action":"[действие]"}}
 
 Текущий шаг определяй сам по истории разговора.`,
@@ -88,7 +96,7 @@ CONVERSATION STRUCTURE (9 steps):
 8. Say that version of them was [age] years old, but now they are grown. Add: "I see you. You have enough strength." Ask what decision they make today
 9. Ask for one action in the next 24 hours that will confirm the new decision
 
-After step 9 — write a final message in JSON format:
+After step 9 — write ONLY JSON without any extra text:
 {"type":"final","text":"[warm closing words from Father]","contract":{"age":"[age]","decision":"[old decision]","name":"[part name]","newDecision":"[new decision]","action":"[action]"}}`
   };
 
@@ -101,7 +109,7 @@ After step 9 — write a final message in JSON format:
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-opus-4-5',
+        model: 'claude-haiku-4-5-20251001',
         max_tokens: 1024,
         system: SYSTEM_PROMPTS[lang] || SYSTEM_PROMPTS.ru,
         messages: messages
@@ -116,7 +124,6 @@ After step 9 — write a final message in JSON format:
     const data = await response.json();
     const text = data.content?.[0]?.text || '';
 
-    // Check if final JSON response
     const jsonMatch = text.match(/\{[\s\S]*"type"\s*:\s*"final"[\s\S]*\}/);
     if (jsonMatch) {
       try {
