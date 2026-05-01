@@ -101,7 +101,7 @@ After step 9 — write a final message in JSON format:
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-opus-4-5',
         max_tokens: 1024,
         system: SYSTEM_PROMPTS[lang] || SYSTEM_PROMPTS.ru,
         messages: messages
