@@ -106,6 +106,21 @@
   #finalCard { display: none; position: fixed; inset: 0; background: #0d0f14; z-index: 20; overflow-y: auto; padding: 36px 22px 40px; animation: fadeUp 0.8s ease forwards; }
   .final-icon { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 32px; color: #c9a96e; letter-spacing: 0.4em; margin-bottom: 6px; }
   .contract-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(201,169,110,0.7); margin-bottom: 24px; text-align: center; }
+
+  /* CODE DECODE BLOCK */
+  .code-block { text-align: center; margin-bottom: 28px; }
+  .code-active-label { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(240,235,227,0.4); margin-bottom: 10px; }
+  .code-name { font-family: 'Cormorant Garamond', serif; font-size: 34px; color: #c9a96e; letter-spacing: 0.05em; line-height: 1.2; margin-bottom: 12px; }
+  .code-phrase { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: #f0ebe3; line-height: 1.5; margin-bottom: 22px; padding: 0 10px; }
+  .code-meta { text-align: left; max-width: 360px; margin: 0 auto 18px; }
+  .code-row { font-size: 14px; line-height: 1.7; color: rgba(240,235,227,0.6); margin-bottom: 10px; }
+  .code-row b { color: rgba(201,169,110,0.85); font-weight: 400; font-style: italic; }
+  .code-shadow { font-size: 13px; line-height: 1.6; color: rgba(240,235,227,0.45); font-style: italic; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(201,169,110,0.12); }
+  .code-shift { background: rgba(201,169,110,0.06); border-left: 2px solid #c9a96e; padding: 14px 16px; margin-top: 18px; text-align: left; max-width: 360px; margin-left: auto; margin-right: auto; }
+  .code-shift-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(201,169,110,0.7); margin-bottom: 6px; }
+  .code-shift-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.5; color: #f0ebe3; }
+  .code-divider { width: 30px; height: 1px; background: rgba(201,169,110,0.3); margin: 26px auto; }
+
   .papa-closing { font-family: 'Cormorant Garamond', serif; font-size: 22px; line-height: 1.7; color: rgba(240,235,227,0.75); text-align: center; margin-bottom: 26px; font-style: italic; padding: 0 6px; }
 
   .contract-box { font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.95; color: #f0ebe3; border: 1px solid rgba(201,169,110,0.28); padding: 24px 18px; margin-bottom: 22px; text-align: left; position: relative; }
@@ -131,6 +146,30 @@
   .home-btn { background: transparent; border: 1px solid rgba(240,235,227,0.15); color: rgba(240,235,227,0.4); font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; padding: 14px; cursor: pointer; width: 100%; transition: all 0.4s; }
   .home-btn:active { color: rgba(240,235,227,0.7); }
 
+
+  /* DISCLAIMER SCREEN */
+  #disclaimerScreen { padding: 50px 28px 40px; }
+  .disc-text { font-size: 14px; line-height: 1.85; color: rgba(240,235,227,0.6); max-width: 360px; margin-bottom: 14px; text-align: left; }
+  .disc-text b { color: rgba(240,235,227,0.85); font-weight: 400; }
+  .disc-accept { background: transparent; border: 1px solid #c9a96e; color: #c9a96e; font-family: 'Montserrat', sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; padding: 16px 40px; cursor: pointer; margin-top: 20px; width: 100%; max-width: 360px; transition: all 0.4s; -webkit-tap-highlight-color: transparent; }
+  .disc-accept:active { background: #c9a96e; color: #0d0f14; }
+
+  /* SOS BUTTON */
+  #sosBtn { position: fixed; bottom: 20px; left: 16px; z-index: 90; background: rgba(180,30,30,0.12); border: 1px solid rgba(180,30,30,0.45); color: rgba(220,80,80,0.9); font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.15em; padding: 9px 14px; cursor: pointer; border-radius: 4px; transition: all 0.3s; -webkit-tap-highlight-color: transparent; }
+  #sosBtn:active { background: rgba(180,30,30,0.25); }
+
+  #sosModal { display: none; position: fixed; inset: 0; z-index: 150; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; padding: 28px; }
+  #sosModal.visible { display: flex; }
+  .sos-box { background: #0d0f14; border: 1px solid rgba(180,30,30,0.4); padding: 30px 24px; max-width: 360px; text-align: left; max-height: 85vh; overflow-y: auto; }
+  .sos-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #f0ebe3; margin-bottom: 6px; text-align: center; }
+  .sos-intro { font-size: 13px; line-height: 1.6; color: rgba(240,235,227,0.55); margin-bottom: 20px; text-align: center; }
+  .sos-line { border: 1px solid rgba(201,169,110,0.25); padding: 14px 16px; margin-bottom: 10px; display: block; text-decoration: none; -webkit-tap-highlight-color: transparent; transition: all 0.3s; }
+  .sos-line:active { border-color: #c9a96e; }
+  .sos-num { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #c9a96e; }
+  .sos-desc { font-size: 12px; color: rgba(240,235,227,0.5); margin-top: 3px; line-height: 1.5; }
+  .sos-note { font-size: 11px; color: rgba(240,235,227,0.4); line-height: 1.6; margin-top: 16px; text-align: center; font-style: italic; }
+  .sos-close { background: transparent; border: 1px solid rgba(240,235,227,0.2); color: rgba(240,235,227,0.5); font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 13px; cursor: pointer; width: 100%; margin-top: 18px; -webkit-tap-highlight-color: transparent; }
+
   #loader { position: fixed; inset: 0; background: #0d0f14; display: flex; align-items: center; justify-content: center; z-index: 200; transition: opacity 0.8s ease; }
   #loader .logo { font-family: 'Cormorant Garamond', serif; font-size: 52px; letter-spacing: 0.5em; color: #c9a96e; animation: breathe 2s ease infinite; }
 
@@ -149,7 +188,31 @@
   <button class="lang-btn" onclick="setLang('en')">EN</button>
 </div>
 
-<div class="screen active" id="topicScreen">
+<!-- SOS BUTTON -->
+<button id="sosBtn" onclick="showSos()">SOS</button>
+
+<!-- SOS MODAL -->
+<div id="sosModal">
+  <div class="sos-box">
+    <div class="sos-title" id="sosTitle">Нужна срочная помощь?</div>
+    <div class="sos-intro" id="sosIntro">Если тебе сейчас тяжело — ты не один. Эти линии работают бесплатно и анонимно, круглосуточно.</div>
+    <a class="sos-line" href="tel:150"><div class="sos-num">150</div><div class="sos-desc" id="sos150">Национальная линия доверия. Бесплатно, анонимно, круглосуточно</div></a>
+    <a class="sos-line" href="tel:111"><div class="sos-num">111</div><div class="sos-desc" id="sos111">Единый контакт-центр Amanat — помощь в трудной ситуации</div></a>
+    <a class="sos-line" href="tel:1303"><div class="sos-num">1303</div><div class="sos-desc" id="sos1303">Центр психологического здоровья. Для взрослых, круглосуточно</div></a>
+    <div class="sos-note" id="sosNote">Скоро здесь появятся прямые контакты проверенных психологов-партнёров KOD.</div>
+    <button class="sos-close" id="sosClose" onclick="closeSos()">Закрыть</button>
+  </div>
+</div>
+
+<!-- DISCLAIMER SCREEN -->
+<div class="screen active" id="disclaimerScreen">
+  <div class="brand">KOD</div>
+  <div class="brand-line"></div>
+  <div class="disc-text" id="discText"><b>KOD — это инструмент самопознания, а не терапия.</b><br><br>Я помогаю тебе увидеть твои паттерны и убеждения через диалог с архетипами. Но я не врач, не психолог и не заменяю профессиональную помощь.<br><br>Если ты переживаешь кризис, острую боль или мысли причинить себе вред — пожалуйста, обратись к специалисту. Кнопка <b>SOS</b> всегда внизу слева.<br><br>Здесь можно быть честным. Здесь тебя не оценивают.</div>
+  <button class="disc-accept" id="discAccept" onclick="acceptDisclaimer()">Я понимаю · Продолжить</button>
+</div>
+
+<div class="screen" id="topicScreen">
   <div class="brand">KOD</div>
   <div class="brand-line"></div>
   <div class="tagline" id="tagline">Перепиши свой код</div>
@@ -241,6 +304,22 @@
 <div id="finalCard">
   <div class="final-icon">KOD</div>
   <div class="contract-label" id="contractLabel">Твой новый код найден</div>
+  <div class="code-block" id="codeBlock">
+    <div class="code-active-label" id="codeActiveLabel">Сейчас особенно активен</div>
+    <div class="code-name" id="codeName"></div>
+    <div class="code-phrase" id="codePhrase"></div>
+    <div class="code-meta">
+      <div class="code-row" id="codeProtects"></div>
+      <div class="code-row" id="codeCosts"></div>
+      <div class="code-row" id="codeTriggers"></div>
+      <div class="code-shadow" id="codeShadow"></div>
+    </div>
+    <div class="code-shift">
+      <div class="code-shift-label" id="codeShiftLabel">Первый сдвиг</div>
+      <div class="code-shift-text" id="codeShift"></div>
+    </div>
+  </div>
+  <div class="code-divider"></div>
   <div class="papa-closing" id="papaClosing"></div>
   <div class="contract-box" id="contractBox"></div>
 
@@ -281,6 +360,12 @@
 <script>
 const L = {
   ru: {
+    discText:'<b>KOD — это инструмент самопознания, а не терапия.</b><br><br>Я помогаю тебе увидеть твои паттерны и убеждения через диалог с архетипами. Но я не врач, не психолог и не заменяю профессиональную помощь.<br><br>Если ты переживаешь кризис, острую боль или мысли причинить себе вред — пожалуйста, обратись к специалисту. Кнопка <b>SOS</b> всегда внизу слева.<br><br>Здесь можно быть честным. Здесь тебя не оценивают.',
+    discAccept:'Я понимаю · Продолжить',
+    codeActiveLabel:'Сейчас особенно активен', codeProtects:'Защищает', codeCosts:'Лишает', codeTriggers:'Включается', codeShadowPre:'Иногда рядом появляется', codeShiftLabel:'Первый сдвиг',
+    sosTitle:'Нужна срочная помощь?', sosIntro:'Если тебе сейчас тяжело — ты не один. Эти линии работают бесплатно и анонимно, круглосуточно.',
+    sos150:'Национальная линия доверия. Бесплатно, анонимно, круглосуточно', sos111:'Единый контакт-центр Amanat — помощь в трудной ситуации', sos1303:'Центр психологического здоровья. Для взрослых, круглосуточно',
+    sosNote:'Скоро здесь появятся прямые контакты проверенных психологов-партнёров KOD.', sosClose:'Закрыть',
     tagline:'Перепиши свой код', topicLabel:'Выбери тему',
     tMoney:'Деньги', tdMoney:'Финансовые убеждения из детства которые управляют твоей жизнью',
     tRelations:'Отношения', tdRelations:'Паттерны в любви и близости которые повторяются снова и снова',
@@ -310,6 +395,12 @@ const L = {
     }
   },
   kz: {
+    discText:'<b>KOD — бұл өзін-өзі тану құралы, терапия емес.</b><br><br>Мен саған архетиптермен диалог арқылы паттерндеріңді көруге көмектесемін. Бірақ мен дәрігер де, психолог та емеспін.<br><br>Егер сен дағдарыста болсаң немесе өзіңе зиян келтіру ойлары болса — маманға жүгін. <b>SOS</b> түймесі әрқашан сол жақта төменде.<br><br>Мұнда шынайы болуға болады. Сені бағаламайды.',
+    discAccept:'Түсінемін · Жалғастыру',
+    codeActiveLabel:'Қазір ерекше белсенді', codeProtects:'Қорғайды', codeCosts:'Айырады', codeTriggers:'Қосылады', codeShadowPre:'Кейде қатар пайда болады', codeShiftLabel:'Алғашқы жылжу',
+    sosTitle:'Шұғыл көмек керек пе?', sosIntro:'Егер саған қазір ауыр болса — сен жалғыз емессің. Бұл желілер тегін, анонимді, тәулік бойы жұмыс істейді.',
+    sos150:'Ұлттық сенім желісі. Тегін, анонимді, тәулік бойы', sos111:'Amanat бірыңғай орталығы — қиын жағдайда көмек', sos1303:'Психологиялық денсаулық орталығы. Ересектерге, тәулік бойы',
+    sosNote:'Жақында мұнда KOD серіктес психологтарының тікелей байланыстары пайда болады.', sosClose:'Жабу',
     tagline:'Өзіңнің кодыңды қайта жаз', topicLabel:'Тақырыпты таңда',
     tMoney:'Ақша', tdMoney:'Балалықтан қалыптасқан қаржылық сенімдер',
     tRelations:'Қарым-қатынас', tdRelations:'Махаббатта қайталанатын паттерндер',
@@ -339,6 +430,12 @@ const L = {
     }
   },
   en: {
+    discText:'<b>KOD is a tool for self-discovery, not therapy.</b><br><br>I help you see your patterns and beliefs through dialogue with archetypes. But I am not a doctor or psychologist, and I do not replace professional help.<br><br>If you are in crisis or having thoughts of harming yourself — please reach out to a specialist. The <b>SOS</b> button is always at the bottom left.<br><br>Here you can be honest. Here you are not judged.',
+    discAccept:'I understand · Continue',
+    codeActiveLabel:'Currently most active', codeProtects:'Protects', codeCosts:'Costs you', codeTriggers:'Activates when', codeShadowPre:'Sometimes alongside appears', codeShiftLabel:'First shift',
+    sosTitle:'Need urgent help?', sosIntro:'If things are hard right now — you are not alone. These lines are free and anonymous, around the clock.',
+    sos150:'National helpline. Free, anonymous, 24/7', sos111:'Amanat unified center — help in difficult situations', sos1303:'Centre for psychological health. For adults, 24/7',
+    sosNote:'Direct contacts of trusted KOD partner psychologists are coming soon.', sosClose:'Close',
     tagline:'Rewrite your code', topicLabel:'Choose a topic',
     tMoney:'Money', tdMoney:'Childhood financial beliefs that run your life',
     tRelations:'Relationships', tdRelations:'Patterns in love and closeness that keep repeating',
@@ -372,6 +469,14 @@ const L = {
 let lang='ru', persona='papa', topic='money', messages=[], isLoading=false, step=0;
 let lastContract = null;
 
+
+function acceptDisclaimer() {
+  document.getElementById('disclaimerScreen').classList.remove('active');
+  showScreen('topicScreen');
+}
+function showSos() { document.getElementById('sosModal').classList.add('visible'); }
+function closeSos() { document.getElementById('sosModal').classList.remove('visible'); }
+
 function setLang(l) {
   lang=l;
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
@@ -403,6 +508,15 @@ function applyLang() {
   document.getElementById('warnText').innerHTML=t.warnText;
   document.getElementById('warnCancel').textContent=t.warnCancel;
   document.getElementById('warnConfirm').textContent=t.warnConfirm;
+  document.getElementById('discText').innerHTML=t.discText;
+  document.getElementById('discAccept').textContent=t.discAccept;
+  document.getElementById('sosTitle').textContent=t.sosTitle;
+  document.getElementById('sosIntro').textContent=t.sosIntro;
+  document.getElementById('sos150').textContent=t.sos150;
+  document.getElementById('sos111').textContent=t.sos111;
+  document.getElementById('sos1303').textContent=t.sos1303;
+  document.getElementById('sosNote').textContent=t.sosNote;
+  document.getElementById('sosClose').textContent=t.sosClose;
   ['papa','mama','warrior','sage','sterva'].forEach(p=>{
     const pd=t.personas[p];
     document.getElementById('n-'+p).textContent=pd.name;
@@ -576,8 +690,25 @@ function showFinal(data) {
   const c=data.contract||data;
   lastContract = c;
   document.getElementById('chatScreen').classList.remove('active');
+  const t = L[lang];
+  // Code decode block
+  const cb = document.getElementById('codeBlock');
+  if (data.codeName) {
+    cb.style.display = 'block';
+    document.getElementById('codeActiveLabel').textContent = t.codeActiveLabel;
+    document.getElementById('codeName').textContent = data.codeName;
+    document.getElementById('codePhrase').textContent = data.codePhrase ? '«'+data.codePhrase+'»' : '';
+    document.getElementById('codeProtects').innerHTML = data.protects ? '<b>'+t.codeProtects+':</b> '+data.protects : '';
+    document.getElementById('codeCosts').innerHTML = data.costs ? '<b>'+t.codeCosts+':</b> '+data.costs : '';
+    document.getElementById('codeTriggers').innerHTML = data.triggers ? '<b>'+t.codeTriggers+':</b> '+data.triggers : '';
+    document.getElementById('codeShadow').textContent = (data.shadowCode && data.shadowCode.trim()) ? t.codeShadowPre+' '+data.shadowCode : '';
+    document.getElementById('codeShiftLabel').textContent = t.codeShiftLabel;
+    document.getElementById('codeShift').textContent = data.shift || '';
+  } else {
+    cb.style.display = 'none';
+  }
   document.getElementById('papaClosing').textContent=data.text||'';
-  document.getElementById('contractBox').innerHTML = L[lang].contractTpl(c);
+  document.getElementById('contractBox').innerHTML = t.contractTpl(c);
   document.getElementById('finalCard').style.display='block';
   document.getElementById('finalCard').scrollTop = 0;
 }
